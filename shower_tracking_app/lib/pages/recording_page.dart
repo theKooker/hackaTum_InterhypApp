@@ -13,7 +13,10 @@ class _RecordingPageState extends State<RecordingPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Recording'),
+        child: Text('RECORDING!!' , 
+        style: TextStyle(fontFamily: 'custom')
+        ),
+        
       ),
     );
   }

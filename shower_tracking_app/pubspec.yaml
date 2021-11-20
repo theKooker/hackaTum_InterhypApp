@@ -66,7 +66,7 @@ flutter:
   fonts:
     - family: custom
       fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/RobotoMono-Bold.tff
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
