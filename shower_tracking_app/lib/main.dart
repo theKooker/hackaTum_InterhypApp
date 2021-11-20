@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shower_tracking_app/components/bottom_bar.dart';
 import 'package:shower_tracking_app/components/history.dart';
 import 'package:shower_tracking_app/components/ranking.dart';
 import 'package:shower_tracking_app/components/tracker.dart';
@@ -56,6 +57,16 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
+        BottomBar(
+            index: 0,
+            onChange: (value) {},
+            items: <BottomBarItem>[
+              BottomBarItem(Icons.play_arrow_outlined, label: "Record"), //Recording
+              BottomBarItem(Icons.list_alt_outlined), //Ranking
+              BottomBarItem(Icons.history_outlined), //History
+              BottomBarItem(Icons.account_circle_outlined), //Account
+            ],
+          ),
       ]),
     );
   }
