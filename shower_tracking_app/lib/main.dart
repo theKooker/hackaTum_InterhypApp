@@ -1,13 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:shower_tracking_app/pages/splash_screen.dart';
 import 'package:shower_tracking_app/router.dart';
 
-// FFI signature of the C function
-typedef SignalProcessFunc = ffi.Void Function();
-// Dart type definition for calling the C foreign function
-typedef SignalProcess = void Function();
 void main() {
   runApp(const App());
 }
@@ -20,7 +14,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-
   @override
   Widget build(BuildContext context) {
 
@@ -30,7 +23,12 @@ class _AppState extends State<App> {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const SplashScreen(), 
+      home: FutureBuilder(
+        future: Future.delayed(const Duration(seconds: 1)),
+        builder: (c, s) => s.connectionState == ConnectionState.done
+            ? const RouterPage()
+            : const SplashScreen(),
+      ),
     );
   }
 }
