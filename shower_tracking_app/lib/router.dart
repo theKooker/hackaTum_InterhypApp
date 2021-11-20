@@ -42,9 +42,9 @@ class _RouterPageState extends State<RouterPage> {
             });
           },
           items: <BottomBarItem>[
-            BottomBarItem(Icons.play_arrow_outlined), //Recording
-            BottomBarItem(Icons.list_alt_outlined), //Ranking
-            BottomBarItem(Icons.history_outlined), //History
+            BottomBarItem("assets/image/Design_playIcon.png", "assets/image/Design_hamburgerIcon.png"), //Recording
+            BottomBarItem("assets/image/Design_hamburgerIcon.png", "assets/image/Design_hamburgerIcon.png"), //Ranking
+            BottomBarItem("assets/image/Design_hamburgerIcon.png", "assets/image/Design_hamburgerIcon.png"), //History
           ],
         ),
       ]),

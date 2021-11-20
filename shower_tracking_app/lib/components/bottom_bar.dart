@@ -48,13 +48,9 @@ class _BottomBarState extends State<BottomBar> {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Expanded(
-                              child: Icon(
-                                widget.items[i].icon,
-                                color: i == widget.index
-                                    ? widget.items[i].color
-                                    : widget.items[i].inactiveColor,
-                                size: i == widget.index ? 35 : 20,
-                              ),
+                              child: widget.index == i
+                                  ? Image.asset(widget.items[i].icon, width: 30,)
+                                  : Image.asset(widget.items[i].inactiveIcon, width: 30),
                             ),
                             if (i == widget.index)
                               Container(
@@ -87,13 +83,15 @@ class _BottomBarState extends State<BottomBar> {
 
 class BottomBarItem {
   BottomBarItem(
-    this.icon, {
+    this.icon,
+    this.inactiveIcon, {
     this.label = "",
     this.color = Colors.indigo,
     this.inactiveColor = Colors.indigoAccent
   });
 
-  final IconData icon;
+  final String icon;
+  final String inactiveIcon;
   final String label;
   final Color color;
   final Color inactiveColor;
