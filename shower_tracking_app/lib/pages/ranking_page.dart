@@ -13,47 +13,62 @@ class _RankingPageState extends State<RankingPage> {
     color: Colors.white,
   );
 
+  List<String> ranking() {
+    //list of random names
+    final names = [ "Ezar Baines", "Ingolf Papp", "Naoko Stuber", "Bárbara Hightower", "Nuh Delany", "Preeti Garry", "T'Challa Panosyan", "Helen Greer", "Clothildis John"];
+    return names;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.indigo,
-      body: SafeArea(
-        child: Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Text('Ranking',
-                      style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white)),
-                ),
-                _first3(),
-              ],
+      body: Stack(
+        children: [
+          SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Text('Ranking',
+                        style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
+                  ),
+                  _first3(),
+                ],
+              ),
             ),
           ),
-        ),
+      
+          Positioned(
+            bottom: -50,
+            right: -50,
+            child: Image.asset("assets/images/LogInPage_Bubble2.png", width: 250,),
+          ),
+      
+          Positioned(
+            top: -20,
+            right: -50,
+            child: Image.asset("assets/images/LogInPage_Bubble1.png", width: 250,),
+          ),
+        ],
       ),
     );
   }
 
   Widget _first3() {
+    var names = ranking();
+
     return Column(
       children: [
-        _rowFirst3(60, "assets/images/Design_1.png", "Paul Köhler"),
-        _rowFirst3(50, "assets/images/Design_2.png", "Mohamed "),
-        _rowFirst3(40, "assets/images/Design_3.png", "Dyllan"),
-        _row(4, "Alex"),
-        _row(5, "Alex"),
-        _row(6, "Alex"),
-        _row(7, "Alex"),
-        _row(8, "Alex"),
-        _row(9, "Alex"),
-        _row(10, "Alex"),
-        _row(11, "Alex"),
+        _rowFirst3(60, "assets/images/Design_1.png", names[0]),
+        _rowFirst3(50, "assets/images/Design_2.png", names[1]),
+        _rowFirst3(40, "assets/images/Design_3.png", names[2]),
+        
         const SizedBox(
           height: 120,
           width: double.infinity,
