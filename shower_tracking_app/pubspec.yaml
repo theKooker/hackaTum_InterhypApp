@@ -38,6 +38,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
+  # Add the dependency for the Firebase Core Flutter SDK
+  firebase_core: ^0.4.0+9
+
+  # Add the dependencies for the Firebase products you want to use in your app
+  # For example, to use Firebase Authentication and Cloud Firestore
+  firebase_auth: ^0.14.0+5
+  cloud_firestore: ^0.12.9+5
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
