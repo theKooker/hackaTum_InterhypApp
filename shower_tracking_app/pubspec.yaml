@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.40.2
 
+  shared_preferences: ^2.0.9
 
 
 

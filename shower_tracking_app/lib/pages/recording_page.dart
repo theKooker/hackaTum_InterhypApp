@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:shower_tracking_app/data/UserTiming.dart';
+import 'package:shower_tracking_app/utils/AppSharePreferences.dart';
+import 'package:shower_tracking_app/utils/localStorageFetcher.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart'; // Import stop_watch_timer
 
 import 'package:flutter/cupertino.dart';
@@ -74,6 +77,9 @@ class _RecordingPageState extends State<RecordingPage> {
                               "assets/images/Design_startPushed.png";
                         } else {
                           _stopWatchTimer.onExecute.add(StopWatchExecute.reset);
+                          UserTiming timing = UserTiming(date: DateTime.now().toString(), time:_stopWatchTimer.secondTime.value.toString());
+                          AppSharePreferences().addUserTiming(timing);
+                          LocalStorageFetcher.fetchLocalStorage();
                           button_string = "assets/images/Design_redPushed.png";
                         }
                         _startTime = !_startTime;
