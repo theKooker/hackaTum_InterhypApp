@@ -23,10 +23,10 @@ class _AppState extends State<App> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        fontFamily:'custom'
+        fontFamily: 'Custom',
       ),
       home: FutureBuilder(
-        future: Future.delayed(const Duration(seconds: 1)),
+        future: Future.delayed(const Duration(milliseconds: 1500)),
         builder: (c, s) => s.connectionState == ConnectionState.done
             ? const RouterPage()
             : const SplashScreen(),

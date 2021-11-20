@@ -12,13 +12,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
        return Scaffold(
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset("assets/images/LogInPage-01-01.png") 
-          ]
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/LogInPage-01-01.png"),
+            fit: BoxFit.cover,
+          ),
         ),
-      
+        child: null /* add child content here */,
+      ),
     );
   }
 }

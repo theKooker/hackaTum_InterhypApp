@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shower_tracking_app/pages/history_page.dart';
 import 'package:shower_tracking_app/pages/ranking_page.dart';
 import 'package:shower_tracking_app/pages/recording_page.dart';
-import 'package:shower_tracking_app/pages/test_page.dart';
 
 import 'components/bottom_bar.dart';
 
@@ -42,9 +41,9 @@ class _RouterPageState extends State<RouterPage> {
             });
           },
           items: <BottomBarItem>[
-            BottomBarItem("assets/image/Design_playIcon.png", "assets/image/Design_hamburgerIcon.png"), //Recording
-            BottomBarItem("assets/image/Design_hamburgerIcon.png", "assets/image/Design_hamburgerIcon.png"), //Ranking
-            BottomBarItem("assets/image/Design_hamburgerIcon.png", "assets/image/Design_hamburgerIcon.png"), //History
+            BottomBarItem("assets/images/Design_playIcon.png", "assets/images/Design_playIcon.png"), //Recording
+            BottomBarItem("assets/images/Design_hamburgerIcon.png", "assets/images/Design_hamburgerIcon.png"), //History
+            BottomBarItem("assets/images/Design_historyIcon.png", "assets/images/Design_historyIcon.png"), //Ranking
           ],
         ),
       ]),
