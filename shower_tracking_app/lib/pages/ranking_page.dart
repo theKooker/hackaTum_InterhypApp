@@ -15,7 +15,20 @@ class _RankingPageState extends State<RankingPage> {
 
   List<String> ranking() {
     //list of random names
-    final names = [ "Ezar Baines", "Ingolf Papp", "Naoko Stuber", "Bárbara Hightower", "Nuh Delany", "Preeti Garry", "T'Challa Panosyan", "Helen Greer", "Clothildis John"];
+    final names = [
+      "Ezar Baines",
+      "Ingolf Papp",
+      "Naoko Stuber",
+      "Bárbara Hightower",
+      "Nuh Delany",
+      "Preeti Garry",
+      "T'Challa Panosyan",
+      "Helen Greer",
+      "Clothildis John",
+      "Kathryn Houghton",
+      "Kathleen Houghton",
+      "Kathleen Houghton",
+    ];
     return names;
   }
 
@@ -32,28 +45,34 @@ class _RankingPageState extends State<RankingPage> {
                 children: [
                   const Padding(
                     padding: EdgeInsets.all(20),
-                    child: Text('Ranking',
-                        style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
+                    child: Text(
+                      'Ranking',
+                      style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
                   ),
                   _first3(),
                 ],
               ),
             ),
           ),
-      
           Positioned(
             bottom: -50,
             right: -50,
-            child: Image.asset("assets/images/LogInPage_Bubble2.png", width: 250,),
+            child: Image.asset(
+              "assets/images/LogInPage_Bubble2.png",
+              width: 250,
+            ),
           ),
-      
           Positioned(
             top: -20,
             right: -50,
-            child: Image.asset("assets/images/LogInPage_Bubble1.png", width: 250,),
+            child: Image.asset(
+              "assets/images/LogInPage_Bubble1.png",
+              width: 250,
+            ),
           ),
         ],
       ),
@@ -68,7 +87,13 @@ class _RankingPageState extends State<RankingPage> {
         _rowFirst3(60, "assets/images/Design_1.png", names[0]),
         _rowFirst3(50, "assets/images/Design_2.png", names[1]),
         _rowFirst3(40, "assets/images/Design_3.png", names[2]),
-        
+        _row(4, names[3]),
+        _row(5, names[4]),
+        _row(6, names[5]),
+        _row(7, names[6]),
+        _row(8, names[7]),
+        _row(9, names[8]),
+        _row(10, names[9]),
         const SizedBox(
           height: 120,
           width: double.infinity,
