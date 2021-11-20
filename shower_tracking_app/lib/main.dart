@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shower_tracking_app/pages/splash_screen.dart';
 import 'package:shower_tracking_app/router.dart';
 
-
 void main() {
   runApp(const App());
 }
@@ -17,7 +16,6 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       title: 'Shower Tracking App',
       theme: ThemeData(
@@ -26,7 +24,7 @@ class _AppState extends State<App> {
         fontFamily: 'Custom',
       ),
       home: FutureBuilder(
-        future: Future.delayed(const Duration(milliseconds: 1500)),
+        future: Future.delayed(const Duration(milliseconds: 500)),
         builder: (c, s) => s.connectionState == ConnectionState.done
             ? const RouterPage()
             : const SplashScreen(),

@@ -18,6 +18,7 @@ class _RecordingPageState extends State<RecordingPage> {
   var button_string = "assets/images/Design_startLifted.png";
   @override
   void dispose() {
+    super.dispose();
     _stopWatchTimer.dispose();
   }
 
