@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030863756263",
+    "project_id": "shower-tracker",
+    "storage_bucket": "shower-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030863756263:android:b03a186363f3fc36977b42",
+        "android_client_info": {
+          "package_name": "com.hackaTUM.shower_tracking_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030863756263-d6fsveut4gpq0cb22anbti54ksh5m8ve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBurH8ZxSgW6_hZCiEXWruYkBZflUfXEjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030863756263-d6fsveut4gpq0cb22anbti54ksh5m8ve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
