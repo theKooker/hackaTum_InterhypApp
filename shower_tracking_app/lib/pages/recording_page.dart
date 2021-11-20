@@ -1,8 +1,6 @@
-
 import 'dart:async';
 import 'dart:io';
 import 'package:stop_watch_timer/stop_watch_timer.dart'; // Import stop_watch_timer
-
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +13,6 @@ class RecordingPage extends StatefulWidget {
 }
 
 class _RecordingPageState extends State<RecordingPage> {
-
   final StopWatchTimer _stopWatchTimer = StopWatchTimer();
   bool _startTime = false;
   var button_string = "assets/images/Design_startLifted.png";
@@ -23,6 +20,7 @@ class _RecordingPageState extends State<RecordingPage> {
   void dispose() {
     _stopWatchTimer.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,13 +65,12 @@ class _RecordingPageState extends State<RecordingPage> {
                   Center(
                       child: GestureDetector(
                     onTapDown: (value) {
-                      setState(() async {
+                      setState(() {
                         if (button_string ==
                             "assets/images/Design_startLifted.png") {
                           _stopWatchTimer.onExecute.add(StopWatchExecute.start);
                           button_string =
                               "assets/images/Design_startPushed.png";
-                            
                         } else {
                           _stopWatchTimer.onExecute.add(StopWatchExecute.reset);
                           button_string = "assets/images/Design_redPushed.png";
@@ -99,27 +96,27 @@ class _RecordingPageState extends State<RecordingPage> {
                             Image.asset(button_string),
                             if (_startTime)
                               Positioned.fill(
-                                  child: Align(
-                                      alignment: Alignment.center,
-                                      child: StreamBuilder<int>(
-                                          stream: _stopWatchTimer.rawTime,
-                                          initialData:
-                                              _stopWatchTimer.rawTime.value,
-                                          builder: (context, snapshot) {
-                                            final value = snapshot.data;
-                                            final displayTime =
-                                                StopWatchTimer.getDisplayTime(
-                                                    value!,
-                                                    hours: false,
-                                                    milliSecond: false);
-                                            return Text(
-                                              displayTime,
-                                              style: const TextStyle(
-                                                  fontSize: 50,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.white),
-                                            );
-                                          })))
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: StreamBuilder<int>(
+                                    stream: _stopWatchTimer.rawTime,
+                                    initialData: _stopWatchTimer.rawTime.value,
+                                    builder: (context, snapshot) {
+                                      final value = snapshot.data;
+                                      final displayTime =
+                                          StopWatchTimer.getDisplayTime(value!,
+                                              hours: false, milliSecond: false);
+                                      return Text(
+                                        displayTime,
+                                        style: const TextStyle(
+                                            fontSize: 50,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
                           ],
                         )
                       ],
