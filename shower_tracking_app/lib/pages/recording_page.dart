@@ -24,8 +24,6 @@ class _RecordingPageState extends State<RecordingPage> {
     _stopWatchTimer.dispose();
   }
   @override
-  Future<void> initState() async {}
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
