@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class RecordingPage extends StatefulWidget {
   const RecordingPage({Key? key}) : super(key: key);
-  
+
   @override
   _RecordingPageState createState() => _RecordingPageState();
 }
@@ -15,14 +15,15 @@ class _RecordingPageState extends State<RecordingPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset("assets/images/Design_BG.png",),
+          Image.asset("assets/images/Design_BigBackground.png",
+              height: MediaQuery.of(context).size.height, fit: BoxFit.fill),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Center(
               child: Image.asset("assets/images/Design_shower.png"),
             ),
             Center(
-              child:
-                  Image.asset("assets/images/Design_waterStreamSeamless.png"),
+              child: Image.asset("assets/images/Design_waterStreamSeamless.png",
+                  fit: BoxFit.none),
             ),
           ]),
           Column(
@@ -45,18 +46,28 @@ class _RecordingPageState extends State<RecordingPage> {
               ),
               Center(
                   child: GestureDetector(
-                      child:
-                          Image.asset(button_string),
-                        onTapDown:(value ){
-                            setState(() {
-                              button_string = "assets/images/Design_startPushed.png";
-                            });
-                        } ,
-                        onTapUp: (value) {
-                          
-                        },)),
-                      
-
+                child: Image.asset(button_string),
+                onTapDown: (value) {
+                  setState(() {
+                    if (button_string ==
+                        "assets/images/Design_startLifted.png") {
+                      button_string = "assets/images/Design_startPushed.png";
+                    } else {
+                      button_string = "assets/images/Design_redPushed.png";
+                    }
+                  });
+                },
+                onTapUp: (value) {
+                  setState(() {
+                    if (button_string ==
+                        "assets/images/Design_startPushed.png") {
+                      button_string = "assets/images/Design_redLifted.png";
+                    } else {
+                      button_string = "assets/images/Design_startLifted.png";
+                    }
+                  });
+                },
+              )),
             ],
           )
         ],
