@@ -16,7 +16,6 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    //final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
     return MaterialApp(
       title: 'Shower Tracking',
