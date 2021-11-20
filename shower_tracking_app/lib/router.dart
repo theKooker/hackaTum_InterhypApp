@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shower_tracking_app/pages/history_page.dart';
+import 'package:shower_tracking_app/pages/ranking_page.dart';
+import 'package:shower_tracking_app/pages/recording_page.dart';
 import 'package:shower_tracking_app/pages/test_page.dart';
 
 import 'components/bottom_bar.dart';
@@ -23,7 +26,14 @@ class _RouterPageState extends State<RouterPage> {
   Scaffold _bottomNavPagination() {
     return Scaffold(
       body: Stack(children: [
-        TestPage(),
+        IndexedStack(
+          index: _currentIndex,
+          children: const [
+            RecordingPage(),
+            RankingPage(),
+            HistoryPage(),
+          ],
+        ),
         BottomBar(
           index: _currentIndex,
           onChange: (value) {
@@ -32,11 +42,9 @@ class _RouterPageState extends State<RouterPage> {
             });
           },
           items: <BottomBarItem>[
-            BottomBarItem(Icons.play_arrow_outlined,
-                label: "Record"), //Recording
-            BottomBarItem(Icons.list_alt_outlined), //Ranking
-            BottomBarItem(Icons.history_outlined), //History
-            BottomBarItem(Icons.account_circle_outlined), //Account
+            BottomBarItem("assets/image/Design_playIcon.png", "assets/image/Design_hamburgerIcon.png"), //Recording
+            BottomBarItem("assets/image/Design_hamburgerIcon.png", "assets/image/Design_hamburgerIcon.png"), //Ranking
+            BottomBarItem("assets/image/Design_hamburgerIcon.png", "assets/image/Design_hamburgerIcon.png"), //History
           ],
         ),
       ]),
