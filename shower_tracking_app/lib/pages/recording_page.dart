@@ -1,5 +1,10 @@
+
 import 'dart:async';
+import 'dart:io';
 import 'package:stop_watch_timer/stop_watch_timer.dart'; // Import stop_watch_timer
+import 'package:record/record.dart';
+import 'package:permission_handler/permission_handler.dart';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +17,7 @@ class RecordingPage extends StatefulWidget {
 }
 
 class _RecordingPageState extends State<RecordingPage> {
+  Record _audioRecorder = Record();
 
   final StopWatchTimer _stopWatchTimer = StopWatchTimer();
   bool _startTime = false;
@@ -21,8 +27,7 @@ class _RecordingPageState extends State<RecordingPage> {
     _stopWatchTimer.dispose();
   }
   @override
-  Future<void> initState() async {
-  }
+  Future<void> initState() async {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,12 +72,13 @@ class _RecordingPageState extends State<RecordingPage> {
                   Center(
                       child: GestureDetector(
                     onTapDown: (value) {
-                      setState(() {
+                      setState(() async {
                         if (button_string ==
                             "assets/images/Design_startLifted.png") {
                           _stopWatchTimer.onExecute.add(StopWatchExecute.start);
                           button_string =
                               "assets/images/Design_startPushed.png";
+                            
                         } else {
                           _stopWatchTimer.onExecute.add(StopWatchExecute.reset);
                           button_string = "assets/images/Design_redPushed.png";

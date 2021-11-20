@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="233b302b-4c07-4ef8-b7c4-237a0fef4a93" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shower_tracking_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shower_tracking_app/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shower_tracking_app/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shower_tracking_app/lib/pages/history_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shower_tracking_app/lib/pages/history_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shower_tracking_app/lib/pages/recording_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/shower_tracking_app/lib/pages/recording_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shower_tracking_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/shower_tracking_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shower_tracking_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/shower_tracking_app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,5 +75,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
