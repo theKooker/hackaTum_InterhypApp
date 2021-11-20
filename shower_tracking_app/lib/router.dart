@@ -42,8 +42,8 @@ class _RouterPageState extends State<RouterPage> {
           },
           items: <BottomBarItem>[
             BottomBarItem("assets/images/Design_playIcon.png", "assets/images/Design_playIcon.png"), //Recording
-            BottomBarItem("assets/images/Design_historyIcon.png", "assets/images/Design_historyIcon.png"), //Ranking
             BottomBarItem("assets/images/Design_hamburgerIcon.png", "assets/images/Design_hamburgerIcon.png"), //History
+            BottomBarItem("assets/images/Design_historyIcon.png", "assets/images/Design_historyIcon.png"), //Ranking
           ],
         ),
       ]),

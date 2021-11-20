@@ -8,6 +8,11 @@ class RankingPage extends StatefulWidget {
 }
 
 class _RankingPageState extends State<RankingPage> {
+  final _textStyle = const TextStyle(
+    fontSize: 20,
+    color: Colors.white,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,10 +21,15 @@ class _RankingPageState extends State<RankingPage> {
         child: Expanded(
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
                   padding: EdgeInsets.all(20),
-                  child: Text('Ranking'),
+                  child: Text('Ranking',
+                      style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
                 ),
                 _first3(),
               ],
@@ -37,13 +47,17 @@ class _RankingPageState extends State<RankingPage> {
         _rowFirst3(50, "assets/images/Design_2.png", "Mohamed "),
         _rowFirst3(40, "assets/images/Design_3.png", "Dyllan"),
         _row(4, "Alex"),
-        _row(4, "Alex"),
-        _row(4, "Alex"),
-        _row(4, "Alex"),
-        _row(4, "Alex"),
-        _row(4, "Alex"),
-        _row(4, "Alex"),
-        _row(4, "Alex"),
+        _row(5, "Alex"),
+        _row(6, "Alex"),
+        _row(7, "Alex"),
+        _row(8, "Alex"),
+        _row(9, "Alex"),
+        _row(10, "Alex"),
+        _row(11, "Alex"),
+        const SizedBox(
+          height: 120,
+          width: double.infinity,
+        ),
       ],
     );
   }
@@ -78,13 +92,16 @@ class _RankingPageState extends State<RankingPage> {
               ),
             ),
           ),
-          Text(name),
+          Text(
+            name,
+            style: _textStyle,
+          ),
         ],
       ),
     );
   }
 
-  Widget _row(int num, String name){
+  Widget _row(int num, String name) {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
@@ -107,11 +124,21 @@ class _RankingPageState extends State<RankingPage> {
                   borderRadius: BorderRadius.circular(1000),
                   color: Colors.blue.shade700,
                 ),
-                child: Text(num.toString()),
+                child: Center(
+                  child: Text(
+                    num.toString(),
+                    style: _textStyle,
+                  ),
+                ),
+                height: 50,
+                width: 50,
               ),
             ),
           ),
-          Text(name),
+          Text(
+            name,
+            style: _textStyle,
+          ),
         ],
       ),
     );
