@@ -24,7 +24,7 @@ class _AppState extends State<App> {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: FutureBuilder(
-        future: Future.delayed(const Duration(seconds: 1)),
+        future: Future.delayed(const Duration(milliseconds: 1500)),
         builder: (c, s) => s.connectionState == ConnectionState.done
             ? const RouterPage()
             : const SplashScreen(),
