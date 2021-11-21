@@ -21,14 +21,14 @@ class _BottomBarState extends State<BottomBar> {
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 15),
           child: Container(
             height: 60,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(
+            decoration: BoxDecoration(
+              color: Colors.blue.shade100,
+              borderRadius: const BorderRadius.all(
                 Radius.circular(30),
               ),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                    blurRadius: 5, offset: Offset.zero, color: Colors.grey)
+                    blurRadius: 8, offset: Offset.zero, color: Colors.blue.shade200)
               ],
             ),
             child: Row(
@@ -42,19 +42,15 @@ class _BottomBarState extends State<BottomBar> {
                     onTap: () => widget.onChange(i),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
-                      child: Container(
+                      child: SizedBox(
                         width: 60,
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Expanded(
-                              child: Icon(
-                                widget.items[i].icon,
-                                color: i == widget.index
-                                    ? widget.items[i].color
-                                    : null,
-                                size: i == widget.index ? 35 : 20,
-                              ),
+                              child: widget.index == i
+                                  ? Image.asset(widget.items[i].icon, width: 30,)
+                                  : Image.asset(widget.items[i].inactiveIcon, width: 30),
                             ),
                             if (i == widget.index)
                               Container(
@@ -87,12 +83,16 @@ class _BottomBarState extends State<BottomBar> {
 
 class BottomBarItem {
   BottomBarItem(
-    this.icon, {
+    this.icon,
+    this.inactiveIcon, {
     this.label = "",
-    this.color = Colors.red,
+    this.color = Colors.indigo,
+    this.inactiveColor = Colors.indigoAccent
   });
 
-  final IconData icon;
+  final String icon;
+  final String inactiveIcon;
   final String label;
   final Color color;
+  final Color inactiveColor;
 }
