@@ -1,6 +1,8 @@
 # FlowingBlue
 A project created in 36 hours for the HackaTUM Hackathon.
 
+![](thumbnail.PNG)
+
 ## Created By
 - Mohamed Dhia Nouri: [@theKooker](https://github.com/theKooker)
 - Dylan Alyandi: [@WoodRawr](https://github.com/WoodRawr)
