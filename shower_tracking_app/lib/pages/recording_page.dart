@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:shower_tracking_app/data/UserTiming.dart';
-import 'package:shower_tracking_app/utils/AppSharePreferences.dart';
-import 'package:shower_tracking_app/utils/localStorageFetcher.dart';
+import 'package:shower_tracking_app/data/user_timing.dart';
+import 'package:shower_tracking_app/utils/app_share_preferences.dart';
+import 'package:shower_tracking_app/utils/local_storage_fetcher.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart'; // Import stop_watch_timer
 
 import 'package:flutter/cupertino.dart';
@@ -33,19 +33,64 @@ class _RecordingPageState extends State<RecordingPage> {
           Image.asset("assets/images/Design_BigBackground.png",
               height: MediaQuery.of(context).size.height, fit: BoxFit.fill),
           SingleChildScrollView(
-              physics: const NeverScrollableScrollPhysics(),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Center(
-                      child: Image.asset("assets/images/Design_shower.png"),
-                    ),
-                    Center(
-                      child: Image.asset(
-                          "assets/images/Design_waterStreamSeamless.png",
-                          fit: BoxFit.none),
-                    ),
-                  ])),
+            physics: const NeverScrollableScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Image.asset("assets/images/Design_shower.png"),
+                ),
+                Center(
+                  child: Image.asset(
+                      "assets/images/Design_waterStreamSeamless.png",
+                      fit: BoxFit.none),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: -20,
+            child: Opacity(
+              opacity: 0.5,
+              child: Image.asset(
+                "assets/images/BigBubbles_BigBubbles.png",
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 0,
+            bottom: 250,
+            child: Image.asset(
+              "assets/images/SmallBubble_SmallBubble.png",
+              width: 150,
+            ),
+          ),
+          Positioned(
+            right: 50,
+            top: 80,
+            child: Image.asset(
+              "assets/images/SmallBubble_SmallBubble.png",
+              width: 40,
+            ),
+          ),
+          Positioned(
+            top: 80,
+            left: 10,
+            child: Image.asset(
+              "assets/images/SmallBubble_SmallBubble.png",
+              width: 250,
+            ),
+          ),
+          Positioned(
+            bottom: 150,
+            left: -70,
+            child: Image.asset(
+              "assets/images/SmallBubble_SmallBubble.png",
+              width: 200,
+            ),
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -77,7 +122,14 @@ class _RecordingPageState extends State<RecordingPage> {
                               "assets/images/Design_startPushed.png";
                         } else {
                           _stopWatchTimer.onExecute.add(StopWatchExecute.reset);
-                          UserTiming timing = UserTiming(date: DateTime.now().toString(), time:_stopWatchTimer.secondTime.value.toString());
+                          UserTiming timing = UserTiming(
+                              day: DateTime.now().day.toString(),
+                              month: DateTime.now().month.toString(),
+                              year: DateTime.now().year.toString(),
+                              hour: DateTime.now().hour.toString(),
+                              minute: DateTime.now().minute.toString(),
+                              time:
+                                  _stopWatchTimer.secondTime.value.toString());
                           AppSharePreferences().addUserTiming(timing);
                           LocalStorageFetcher.fetchLocalStorage();
                           button_string = "assets/images/Design_redPushed.png";
@@ -100,7 +152,7 @@ class _RecordingPageState extends State<RecordingPage> {
                       children: [
                         Stack(
                           children: [
-                            Image.asset(button_string),
+                            Image.asset(button_string, height: 100),
                             if (_startTime)
                               Positioned.fill(
                                 child: Align(

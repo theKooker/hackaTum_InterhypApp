@@ -8,14 +8,12 @@ class StatisticsGrid extends StatelessWidget {
 
     return AspectRatio(
       aspectRatio: 3,
-      child: Expanded(
-        child: Row(
-          children: [
-            _card(padding, "AVG. Water", "36L"),
-            _card(padding, "Total Water", "252L"),
-            _card(padding, "Total Energy", "26MJ"),
-          ],
-        ),
+      child: Row(
+        children: [
+          _card(padding, "AVG. Water", "36L"),
+          _card(padding, "Total Water", "252L"),
+          _card(padding, "Total Energy", "26MJ"),
+        ],
       ),
     );
   }

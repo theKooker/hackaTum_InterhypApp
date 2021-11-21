@@ -1,6 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shower_tracking_app/data/UserTiming.dart';
-import 'dart:convert';
+import 'package:shower_tracking_app/data/user_timing.dart';
 
 class AppSharePreferences {
   final String _userTimings = "times_dates";
@@ -8,8 +7,12 @@ class AppSharePreferences {
   Future<bool> addUserTiming(UserTiming userTiming) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     var str = userTiming.toJson().toString();
-    List<String>list = [];
-    getUserTiming().then((value) => {list = value ,list.add(str),preferences.setStringList(_userTimings, list)});
+    List<String> list = [];
+    getUserTiming().then((value) => {
+          list = value,
+          list.add(str),
+          preferences.setStringList(_userTimings, list)
+        });
     return true;
   }
 
@@ -17,7 +20,7 @@ class AppSharePreferences {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 
     if (preferences.containsKey(_userTimings)) {
-      return preferences.getStringList(_userTimings)??[];
+      return preferences.getStringList(_userTimings) ?? [];
     } else {
       return [];
     }

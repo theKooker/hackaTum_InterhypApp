@@ -1,5 +1,5 @@
-import 'package:shower_tracking_app/data/UserTiming.dart';
-import 'package:shower_tracking_app/utils/AppSharePreferences.dart';
+import 'package:shower_tracking_app/data/user_timing.dart';
+import 'package:shower_tracking_app/utils/app_share_preferences.dart';
 
 class LocalStorageFetcher {
   static List<UserTiming> fetchLocalStorage() {
