@@ -1,1 +1,19 @@
+# MATLAB Stuff
+
+# Windows default autosave extension
+*.asv
+
+# Generated helpsearch folders
+helpsearch*/
+
+
+# Simulink autosave extension
+*.autosave
+
+# Simulink cache files
+*.slxc
+
+# Octave session info
+octave-workspace
+
 **/pubspec.lock
