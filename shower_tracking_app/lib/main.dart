@@ -24,7 +24,7 @@ class _AppState extends State<App> {
         fontFamily: 'Custom',
       ),
       home: FutureBuilder(
-        future: Future.delayed(const Duration(milliseconds: 500)),
+        future: Future.delayed(const Duration(milliseconds: 1000)),
         builder: (c, s) => s.connectionState == ConnectionState.done
             ? const RouterPage()
             : const SplashScreen(),

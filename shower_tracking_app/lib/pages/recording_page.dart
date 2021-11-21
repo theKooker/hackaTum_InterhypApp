@@ -76,7 +76,7 @@ class _RecordingPageState extends State<RecordingPage> {
             ),
           ),
           Positioned(
-            top: 80,
+            top: 120,
             left: 10,
             child: Image.asset(
               "assets/images/SmallBubble_SmallBubble.png",
